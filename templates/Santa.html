@@ -1,0 +1,20 @@
+<script>
+    $(document).ready(function() {
+
+        setTimeout("$('#sunta').fadeIn('fast');", 6000);
+        setTimeout("$('#sunta').fadeOut('slow');", 29000);
+    });
+
+    var congratulations = "{$santa_text|strip|escape}";
+    var swf = "{$wa_app_static_url}plugins/santa/swf/dedm.swf";
+
+    function hidden_dedm() {
+        document.getElementById("sunta").style.display = 'none';
+    }
+    document.write(
+            '<div id="sunta" style="position:fixed!important;display:block;position:absolute;left:0px;top:0px;z-index:1900;">\
+<div style="position:relative; z-index:2000;">\
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="600" height="400" align="middle"> \
+<param name="allowScriptAccess" value="always" /> <param name="movie" value="' + swf + '" /> <param name="menu" value="false" /> <param name="quality" value="high" /> <param name="bgcolor" value="#ffcccc" /> <param name="wmode" value="transparent"> \
+<param name="FlashVars" value="pozdr=' + congratulations + '" /> <embed src="' + swf + '" width="900" height="700" align="middle" menu="false" quality="high" bgcolor="#ffcccc" name="dedm" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" FlashVars="pozdr=' + congratulations + '" /></object></div></div>');
+</script>

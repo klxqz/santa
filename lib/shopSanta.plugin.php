@@ -30,7 +30,7 @@ class shopSantaPlugin extends shopPlugin {
         if ($plugin->getSettings('status') && ($plugin->getSettings('first_visit')==0 || ($plugin->getSettings('first_visit')==1 && !$plugin->checkFirstVisit()))) {
             $view = wa()->getView();
             $view->assign('santa_text', $plugin->getSettings('text'));
-            $template_path = wa()->getAppPath('plugins/santa/templates/santa.html', 'shop');
+            $template_path = wa()->getAppPath('plugins/santa/templates/Santa.html', 'shop');
             $html = $view->fetch($template_path);
             return $html;
         }

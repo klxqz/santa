@@ -27,9 +27,9 @@ class shopSantaPlugin extends shopPlugin {
 
     public function display() {
         $plugin = self::getThisPlugin();
-        if ($plugin->getSettings('status') && ($plugin->getSettings('first_visit')==0 || ($plugin->getSettings('first_visit')==1 && !$plugin->checkFirstVisit()))) {
+        if ($plugin->getSettings('status') && ($plugin->getSettings('first_visit') == 0 || ($plugin->getSettings('first_visit') == 1 && !$plugin->checkFirstVisit()))) {
             $view = wa()->getView();
-            $view->assign('santa_text', $plugin->getSettings('text'));
+            $view->assign('santa_text', $plugin->getSettings('text') . '<br />');
             $template_path = wa()->getAppPath('plugins/santa/templates/Santa.html', 'shop');
             $html = $view->fetch($template_path);
             return $html;
